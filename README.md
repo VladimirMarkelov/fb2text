@@ -32,6 +32,7 @@ The default formatter. The function gets parsed book in internal format and retu
 * maxWidth - no line of text exceeds this limit
 * justify - add extra spaces between words to make all lines, except the last line of each paragraph, the same width
 Compare the same text with
+
 justify = false
 
 <img src="./images/not_justified.png" alt="Formatted text without justification">
