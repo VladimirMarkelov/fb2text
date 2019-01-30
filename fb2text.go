@@ -8,6 +8,8 @@ import (
 	"os"
 	"regexp"
 	"strings"
+	
+	"golang.org/x/net/html/charset"
 )
 
 /*
@@ -237,6 +239,8 @@ func ParseBook(fileName string, parseBody bool) (BookInfo, []string) {
 		defer xmlFile.Close()
 		decoder = xml.NewDecoder(xmlFile)
 	}
+	
+	decoder.CharsetReader = charset.NewReaderLabel
 
 	var currLine string
 	for {
