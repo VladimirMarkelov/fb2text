@@ -8,7 +8,7 @@ import (
 	"os"
 	"regexp"
 	"strings"
-	
+
 	"golang.org/x/net/html/charset"
 )
 
@@ -239,7 +239,7 @@ func ParseBook(fileName string, parseBody bool) (BookInfo, []string) {
 		defer xmlFile.Close()
 		decoder = xml.NewDecoder(xmlFile)
 	}
-	
+
 	decoder.CharsetReader = charset.NewReaderLabel
 
 	var currLine string
@@ -417,7 +417,7 @@ func formatSection(text string, maxWidth int, justify bool, newLine bool) []stri
 		}
 	}
 
-	if len(curr) > 0 && len(runes) > 0 {
+	if len(curr) > 0 || len(runes) > 0 {
 		if len(runes)+len(curr) <= tempWidth {
 			if len(runes) == 0 {
 				lines = append(lines, string(curr))
